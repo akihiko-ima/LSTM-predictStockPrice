@@ -1,0 +1,32 @@
+[project]
+name = "lstm-stockprice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "marimo[recommended]>=0.19.7",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.2",
+    "pandas>=3.0.0",
+    "pandas-stubs>=3.0.0.260204",
+    "scikit-learn>=1.8.0",
+    "scikit-learn-stubs>=0.0.3",
+    "tdqm>=0.0.1",
+    "torch>=2.10.0",
+    "yfinance>=1.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "poethepoet>=0.40.0",
+    "ruff>=0.15.0",
+]
+
+[tool.poe.tasks]
+format = "uv run ruff format ."
+lint = "uv run ruff check --fix ."
+type-check = "uv run mypy ."
+
+check = ["format", "lint", "type-check"]

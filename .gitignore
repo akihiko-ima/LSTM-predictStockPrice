@@ -1,0 +1,8 @@
+# virtual environment
+.venv
+
+# cache files
+__pycache__/
+*.pyc
+.ruff_cache/
+__marimo__/
